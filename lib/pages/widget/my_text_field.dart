@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -18,6 +19,7 @@ class MyTextField extends StatelessWidget {
         ),
       ),
       child: TextFormField(
+
         validator: (value){
           if(value!.isEmpty){
             return requiredName;
@@ -26,7 +28,6 @@ class MyTextField extends StatelessWidget {
         maxLines: maxLines,
         controller: controller,
         decoration: InputDecoration(
-
           contentPadding: EdgeInsets.only(left: 10),
           hintText: hintText,
           focusedErrorBorder: InputBorder.none,

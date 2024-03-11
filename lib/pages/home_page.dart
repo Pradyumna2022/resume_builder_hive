@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -112,12 +111,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              'About Information',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.person,size: 18,),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Text(
+                                    'About Information',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           Padding(
@@ -130,12 +137,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              'Experience Information',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.wb_incandescent_sharp,size: 18,),
+
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Text(
+                                    'Experience Information',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           Padding(
@@ -143,18 +159,26 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               data[index].experience!,
                               style: TextStyle(
-                                fontSize: 12,
+                                  fontSize: 14, color: Colors.grey[700]
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 5.0),
-                            child: Text(
-                              'Activity',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Row(
+                              children: [
+                                Icon(Icons.volunteer_activism,size: 18,),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Text(
+                                    'Activity',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           Padding(
@@ -162,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(
                               data[index].other!,
                               style: TextStyle(
-                                fontSize: 12,
+                                  fontSize: 14, color: Colors.grey[700]
                               ),
                             ),
                           ),
@@ -257,23 +281,49 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: _formKey,
                 child: Column(
                   children: [
-                    MyTextField(controller: nameController, hintText: 'Name',
-                    requiredName:  'Name',),
-                    MyTextField(controller: emailController, hintText: 'Email',
-                      requiredName:  'Email',),
-                    MyTextField(controller: phoneController, hintText: 'Phone',
-                      requiredName:  'Phone',),
-                    MyTextField(controller: aboutController, hintText: 'About',
-                      requiredName:  'About',maxLines: 4,),
-                    MyTextField(controller: educationController, hintText: 'Education',
-                      requiredName:  'Education',maxLines: 4,),
-                    MyTextField(controller: expController, hintText: 'Experience',
-                      requiredName:  'Experience',maxLines: 4,),
-                    MyTextField(controller: locationController, hintText: 'Location',
-                      requiredName:  'Location',),
-                    MyTextField(controller: otherController, hintText: 'Other',
-                      requiredName:  'Other',),
-
+                    MyTextField(
+                      controller: nameController,
+                      hintText: 'Name',
+                      requiredName: 'Name',
+                    ),
+                    MyTextField(
+                      controller: emailController,
+                      hintText: 'Email',
+                      requiredName: 'Email',
+                    ),
+                    MyTextField(
+                      controller: phoneController,
+                      hintText: 'Phone',
+                      requiredName: 'Phone',
+                    ),
+                    MyTextField(
+                      controller: aboutController,
+                      hintText: 'About',
+                      requiredName: 'About',
+                      maxLines: 4,
+                    ),
+                    MyTextField(
+                      controller: educationController,
+                      hintText: 'Education',
+                      requiredName: 'Education',
+                      maxLines: 4,
+                    ),
+                    MyTextField(
+                      controller: expController,
+                      hintText: 'Experience',
+                      requiredName: 'Experience',
+                      maxLines: 4,
+                    ),
+                    MyTextField(
+                      controller: locationController,
+                      hintText: 'Location',
+                      requiredName: 'Location',
+                    ),
+                    MyTextField(
+                      controller: otherController,
+                      hintText: 'Other',
+                      requiredName: 'Other',
+                    ),
                   ],
                 ),
               ),
@@ -348,92 +398,30 @@ class _HomeScreenState extends State<HomeScreen> {
             content: SingleChildScrollView(
               child: Column(
                 children: [
-                  // TextFormField(
-                  //   controller: nameController,
-                  //   decoration: InputDecoration(
-                  //       enabledBorder: OutlineInputBorder(),
-                  //       focusedBorder: OutlineInputBorder(),
-                  //       hintText: 'Name'),
-                  // ),
-                  MyTextField(controller: nameController  , hintText: 'Name'),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Email'),
-                    ),
+                  MyTextField(controller: nameController, hintText: 'Name'),
+                  MyTextField(controller: emailController, hintText: 'Email',),
+                  MyTextField(
+                    controller: phoneController,
+                    hintText: 'Phone',
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      keyboardType: TextInputType.phone,
-                      inputFormatters: [
-                        LengthLimitingTextInputFormatter(10)
-                      ],
-                      controller: phoneController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Phone'),
-                    ),
+                  MyTextField(
+                    controller: educationController,
+                    hintText: 'Education',
+                    maxLines: 4,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      maxLines: 4,
-                      controller: educationController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Education'),
-                    ),
+                  MyTextField(
+                    controller: expController,
+                    hintText: 'Experience',
+                    maxLines: 4,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      maxLines: 4,
-                      controller: expController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Experience'),
-                    ),
+                  MyTextField(
+                    controller: aboutController,
+                    hintText: 'About',
+                    maxLines: 4,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      maxLines: 4,
-                      controller: aboutController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'About'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      controller: locationController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Location'),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: TextFormField(
-                      controller: otherController,
-                      decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(),
-                          focusedBorder: OutlineInputBorder(),
-                          hintText: 'Other'),
-                    ),
-                  ),
+                  MyTextField(
+                      controller: locationController, hintText: 'Location'),
+                  MyTextField(controller: otherController, hintText: 'Other'),
                 ],
               ),
             ),

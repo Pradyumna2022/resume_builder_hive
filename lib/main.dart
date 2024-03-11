@@ -10,7 +10,7 @@ void main() async{
   var directory = await getApplicationDocumentsDirectory();
   Hive.init(directory.path);
   Hive.registerAdapter(ResumeModelAdapter());
-  Hive.openBox<ResumeModel>('resume');
+  await Hive.openBox<ResumeModel>('resume');
   runApp(const MyApp());
 }
 
