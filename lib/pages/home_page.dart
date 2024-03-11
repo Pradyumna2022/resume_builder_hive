@@ -54,61 +54,102 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.grey),
                             ),
                           ),
-                          Center(
-                            child: Text(
-                              data[index].name!,
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
+
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            padding: EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Colors.grey,width: 0.7
+                                ),
+                                borderRadius: BorderRadius.circular(3)
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 1.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Center(
+                                  child: Text(
+                                    data[index].name!,
+                                    style: TextStyle(
+                                        fontSize: 30, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.email,
+                                          size: 12,
+                                          color: Colors.red,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left: 2.0),
+                                          child: Text(
+                                            data[index].email!,
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.phone,
+                                            size: 10,
+                                            color: Colors.green,
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 2.0),
+                                            child: Text(
+                                              data[index].phoneNo!,
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Icon(
-                                      Icons.email,
-                                      size: 12,
+                                      Icons.add_location,
+                                      size: 10,
                                       color: Colors.red,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(left: 2.0),
-                                      child: Text(
-                                        data[index].email!,
-                                        style: TextStyle(
-                                          fontSize: 12,
+                                      padding:
+                                      const EdgeInsets.only(left: 2.0),
+                                      child: SizedBox(
+                                        width: MediaQuery.of(context).size.width*0.65,
+                                        child: Text(
+                                          data[index].location!,
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                          ),
+                                          softWrap: true,
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                     ),
                                   ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.phone,
-                                        size: 10,
-                                        color: Colors.green,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 2.0),
-                                        child: Text(
-                                          data[index].phoneNo!,
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+
                               ],
                             ),
                           ),
+
+
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: Row(
