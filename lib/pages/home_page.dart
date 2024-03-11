@@ -176,6 +176,38 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 14, color: Colors.grey[700]),
                             ),
                           ),
+
+
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.reduce_capacity_outlined,size: 18,),
+
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 8.0),
+                                  child: Text(
+                                    'Education Information',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Text(
+                              data[index].education!,
+                              style: TextStyle(
+                                  fontSize: 14, color: Colors.grey[700]
+                              ),
+                            ),
+                          ),
+
                           Padding(
                             padding: const EdgeInsets.only(top: 8.0),
                             child: Row(
@@ -195,6 +227,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
+
+
                           Padding(
                             padding: const EdgeInsets.only(top: 5.0),
                             child: Text(
@@ -204,6 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ),
+
                           Padding(
                             padding: const EdgeInsets.only(top: 5.0),
                             child: Row(
